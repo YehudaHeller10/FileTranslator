@@ -494,6 +494,7 @@ class Translator {
             'zh': 'Chinese',
             'ar': 'Arabic',
             'hi': 'Hindi',
+            'he': 'hebrew',
             'tr': 'Turkish',
             'pl': 'Polish',
             'nl': 'Dutch',
