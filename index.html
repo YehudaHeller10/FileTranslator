@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxTranslate - Professional File Translation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+    <!-- Header Ad Space -->
+    <div class="ad-container header-ad">
+        <div class="ad-placeholder">
+            <span>Advertisement Space - 728x90</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🌟</span>
+                <h1>LuxTranslate</h1>
+            </div>
+            <p class="tagline">Professional File Translation Suite</p>
+        </header>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <!-- Sidebar Ad Space -->
+                <div class="ad-container sidebar-ad">
+                    <div class="ad-placeholder">
+                        <span>Ad Space<br>300x250</span>
+                    </div>
+                </div>
+
+                <div class="translation-settings">
+                    <h3>Translation Settings</h3>
+                    <div class="language-selector">
+                        <div class="select-group">
+                            <label for="sourceLanguage">From:</label>
+                            <select id="sourceLanguage">
+                                <option value="auto">Auto-detect</option>
+                                <option value="en">English</option>
+                                <option value="es">Spanish</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                                <option value="it">Italian</option>
+                                <option value="pt">Portuguese</option>
+                                <option value="ru">Russian</option>
+                                <option value="ja">Japanese</option>
+                                <option value="ko">Korean</option>
+                                <option value="zh">Chinese</option>
+                                <option value="ar">Arabic</option>
+                                <option value="hi">Hindi</option>
+                            </select>
+                        </div>
+                        <div class="select-group">
+                            <label for="targetLanguage">To:</label>
+                            <select id="targetLanguage">
+                                <option value="en">English</option>
+                                <option value="es">Spanish</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                                <option value="it">Italian</option>
+                                <option value="pt">Portuguese</option>
+                                <option value="ru">Russian</option>
+                                <option value="ja">Japanese</option>
+                                <option value="ko">Korean</option>
+                                <option value="zh">Chinese</option>
+                                <option value="ar">Arabic</option>
+                                <option value="hi">Hindi</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="chunk-settings">
+                        <label for="chunkSize">Chunk Size (characters):</label>
+                        <input type="range" id="chunkSize" min="1000" max="10000" value="5000">
+                        <span id="chunkSizeValue">5000</span>
+                    </div>
+
+                    <div class="format-options">
+                        <h4>Supported Formats</h4>
+                        <div class="format-list">
+                            <span class="format-tag">.txt</span>
+                            <span class="format-tag">.srt</span>
+                            <span class="format-tag">.vtt</span>
+                            <span class="format-tag">.csv</span>
+                            <span class="format-tag">.json</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="translation-history">
+                    <h3>Recent Translations</h3>
+                    <div id="historyList" class="history-list">
+                        <p class="empty-state">No translations yet</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-panel">
+                <div class="upload-section">
+                    <div id="dropZone" class="drop-zone">
+                        <div class="drop-zone-content">
+                            <div class="upload-icon">📁</div>
+                            <h3>Drop your files here</h3>
+                            <p>or click to browse</p>
+                            <p class="file-info">Supports: TXT, SRT, VTT, CSV, JSON files up to 100MB</p>
+                            <input type="file" id="fileInput" accept=".txt,.srt,.vtt,.csv,.json" multiple hidden>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="filePreview" class="file-preview hidden">
+                    <div class="preview-header">
+                        <h3>File Preview</h3>
+                        <button id="clearFiles" class="btn-secondary">Clear All</button>
+                    </div>
+                    <div id="fileList" class="file-list"></div>
+                </div>
+
+                <div id="translationProgress" class="translation-progress hidden">
+                    <div class="progress-header">
+                        <h3>Translation Progress</h3>
+                        <div class="progress-stats">
+                            <span id="progressText">Preparing...</span>
+                            <span id="progressPercent">0%</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <div id="progressDetails" class="progress-details"></div>
+                </div>
+
+                <div id="translationResults" class="translation-results hidden">
+                    <div class="results-header">
+                        <h3>Translation Complete</h3>
+                        <div class="results-actions">
+                            <button id="downloadAll" class="btn-primary">
+                                <span class="btn-icon">⬇️</span>
+                                Download All Files
+                            </button>
+                            <button id="previewResults" class="btn-secondary">Preview</button>
+                        </div>
+                    </div>
+                    <div id="resultsList" class="results-list"></div>
+                </div>
+
+                <div class="action-panel">
+                    <button id="translateBtn" class="btn-primary btn-large" disabled>
+                        <span class="btn-icon">🌍</span>
+                        Start Translation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Ad Space -->
+    <footer class="footer">
+        <div class="ad-container footer-ad">
+            <div class="ad-placeholder">
+                <span>Advertisement Space - 728x90</span>
+            </div>
+        </div>
+        <div class="footer-content">
+            <p>&copy; 2025 LuxTranslate. Professional translation services.</p>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Processing your files...</p>
+        </div>
+    </div>
+
+    <!-- Preview Modal -->
+    <div id="previewModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>File Preview</h3>
+                <button id="closeModal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="previewContent" class="preview-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="fileHandler.js"></script>
+    <script src="translator.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
